@@ -8,7 +8,7 @@
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>client</artifactId>
+	<artifactId>client-tests</artifactId>
 
 	<name>client-tests</name>
 	<dependencies>
