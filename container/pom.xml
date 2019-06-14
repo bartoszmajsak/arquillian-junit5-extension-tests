@@ -11,24 +11,6 @@
 	<artifactId>container-tests</artifactId>
 
 	<name>container-tests</name>
-	<dependencies>
-		<dependency>
-			<groupId>org.jboss.arquillian.test</groupId>
-			<artifactId>arquillian-test-spi</artifactId>
-			<version>${arquillian.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.arquillian.container</groupId>
-			<artifactId>arquillian-container-test-spi</artifactId>
-			<version>${arquillian.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>core</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-
-	</dependencies>
 
 	<build>
 		<plugins>
