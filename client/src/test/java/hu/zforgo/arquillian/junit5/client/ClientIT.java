@@ -1,6 +1,6 @@
 package hu.zforgo.arquillian.junit5.client;
 
-import io.github.zforgo.arquillian.junit5.ArquillianExtension;
+import org.jboss.arquillian.junit5.ArquillianExtension;
 import io.restassured.response.ResponseBody;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -19,7 +19,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(ArquillianExtension.class)
-class ClientIT {
+public class ClientIT {
 
 	@ArquillianResource
 	private URL basePath;
@@ -32,12 +32,12 @@ class ClientIT {
 	}
 
 	@Test
-	void injectSuccess() {
+	public void injectSuccess() {
 		Assertions.assertNotNull(basePath);
 	}
 
 	@Test
-	void valid() {
+	public void valid() {
 		ResponseBody response = given().log().all(true)
 				.contentType(MediaType.TEXT_PLAIN)
 				.accept(MediaType.MEDIA_TYPE_WILDCARD)

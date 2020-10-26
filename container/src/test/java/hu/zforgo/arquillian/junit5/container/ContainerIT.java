@@ -1,6 +1,6 @@
 package hu.zforgo.arquillian.junit5.container;
 
-import io.github.zforgo.arquillian.junit5.ArquillianExtension;
+import org.jboss.arquillian.junit5.ArquillianExtension;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -16,7 +16,7 @@ import javax.inject.Inject;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(ArquillianExtension.class)
-class ContainerIT {
+public class ContainerIT {
 
 	@Deployment
 	public static Archive<?> createDeployment() {
@@ -29,13 +29,13 @@ class ContainerIT {
 	FooService fooService;
 
 	@Test
-	void bootstrapTest() {
+	public void bootstrapTest() {
 		assertEquals("foo", fooService.foo());
 	}
 
 	@ParameterizedTest
 	@ValueSource(ints = {2, 4, 10, 20})
-	void evenTests(int input) {
+	public void evenTests(int input) {
 		assertEquals(FooService.EvenOdd.EVEN, fooService.evenOdd(input));
 	}
 }
